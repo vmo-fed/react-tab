@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { TabList, Tab }  from './ReactTab';
+import { TabList, Tab }  from '../build/ReactTab';
 
 class HelloMessage extends React.Component {
   render() {
