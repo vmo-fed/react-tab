@@ -3,10 +3,12 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 const propTypes = {
+  /** 显示第几个tab的内容，默认为第一个 */
   current: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number
   ]),
+  /** 内嵌Tab组件 */
   children: PropTypes.node.isRequired,
 }
 
