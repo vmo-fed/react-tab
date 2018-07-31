@@ -3,7 +3,7 @@
 ### 安装
 
 ```shell
-npm i react-tab -S
+npm i @vmo-fed/react-tab -S
 ```
 
 ### 使用
@@ -14,7 +14,7 @@ import { TabList, Tab } from 'react-tab';
 class App extends React.Component {
   render() {
     return (
-      <TabList>
+      <TabList current=>
         <Tab label="tab1">tab 1 content</Tab>
         <Tab label="tab2">tab 2 content</Tab>
         <Tab label="tab3">tab 3 content</Tab>
