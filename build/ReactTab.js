@@ -33,6 +33,10 @@ class TabList extends Component {
     return React.createElement("div", {
       className: "tab-labels"
     }, this.props.children.map((item, index) => {
+      if (!item) {
+        return;
+      }
+
       return React.createElement("div", {
         key: index,
         className: `tab-label${classnames({

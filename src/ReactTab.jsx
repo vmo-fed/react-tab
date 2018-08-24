@@ -37,6 +37,9 @@ class TabList extends Component {
     return (
       <div className="tab-labels">
         {this.props.children.map((item, index) => {
+          if (!item) {
+            return;
+          }
           return <div key={index} className={`tab-label${classnames({' active': this.state.tabIndex == index})}`} onClick={this.handleTab(index)}>{item.props.label}</div>
         })}
       </div>
