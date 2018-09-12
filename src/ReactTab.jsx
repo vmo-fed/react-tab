@@ -73,6 +73,15 @@ const propTypes = {
   label: PropTypes.string.isRequired,
   /** tab的内容 */
   children: PropTypes.node.isRequired,
+  /** disabled tab：class值为disabled */
+  disabled: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.bool
+  ]),
+}
+
+const defaultPropsTab = {
+  disabled: ''
 }
 
 class Tab extends Component {
@@ -86,5 +95,6 @@ class Tab extends Component {
 }
 
 Tab.propTypes = propTypes;
+Tab.defaultProps = defaultPropsTab;
 
 export { TabList, Tab };
