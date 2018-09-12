@@ -21,8 +21,12 @@ class TabList extends Component {
     this.handleTab = this.handleTab.bind(this);
   }
 
-  handleTab(index) {
+  handleTab(index, disabled) {
     return e => {
+      if (disabled) {
+        return;
+      }
+
       this.setState({
         tabIndex: index
       });
@@ -33,12 +37,17 @@ class TabList extends Component {
     return React.createElement("div", {
       className: "tab-labels"
     }, this.props.children.map((item, index) => {
+      if (!item) {
+        return;
+      }
+
       return React.createElement("div", {
         key: index,
         className: `tab-label${classnames({
-          ' active': this.state.tabIndex == index
+          ' active': this.state.tabIndex == index,
+          ' disabled': item.props.disabled
         })}`,
-        onClick: this.handleTab(index)
+        onClick: this.handleTab(index, item.props.disabled)
       }, item.props.label);
     }));
   }
@@ -74,7 +83,8 @@ class Tab extends Component {
 
   render() {
     return React.createElement("div", {
-      label: this.props.label
+      label: this.props.label,
+      disabled: !!this.props.disabled
     }, this.props.children);
   }
 
