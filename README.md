@@ -9,7 +9,7 @@ npm i @vmo-fed/react-tab -S
 ### 使用
 
 ```jsx
-import { TabList, Tab } from 'react-tab';
+import { TabList, Tab } from "@vmo-fed/react-tab";
 
 class App extends React.Component {
   render() {
